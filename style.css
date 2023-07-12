@@ -1,0 +1,105 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: cornsilk;
+}
+
+.btn {
+  position: relative;
+  padding: 20px 25px 20px 25px;
+  font-size: 20px;
+  font-family: 'roboto';
+  text-transform: uppercase;
+  outline: none;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.btn-primary {
+  background-color: cornflowerblue;
+  border: 2px solid cadetblue;
+  color: white;
+  transition: .5s ease all;
+}
+
+.btn-warning {
+  background-color: rgb(254, 142, 4);
+  border: 2px solid rgb(232, 121, 10);
+  color: white;
+  transition: .5s ease all;
+}
+
+.btn-primary:hover {
+  background-color: rgb(67, 119, 215);
+  box-shadow: 0px 11px 20px 2px rgb(67, 119, 215, 0.78);
+}
+
+.btn-warning:hover {
+  background-color: rgb(253, 114, 9);
+  box-shadow: 0px 14px 20px 5px rgba(253, 153, 4, 0.78);
+}
+
+.btn:hover::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  background-color: transparent;
+  border-top-left-radius: 5px;
+  border-top: 3px solid #FFF;
+  border-left: 3px solid #FFF;
+  animation: btn-animation-top .9s alternate forwards;
+
+}
+
+.btn:hover::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 3px;
+  bottom: 2px;
+  background-color: transparent;
+  border-bottom-right-radius: 5px;
+  border-bottom: 3px solid #FFF;
+  border-right: 3px solid #FFF;
+  animation: btn-animation-bottom .5s alternate forwards;
+}
+
+@keyframes btn-animation-top {
+  0% {
+    height: 0;
+    width: 0;
+  }
+
+  50% {
+    height: 20px;
+    width: 60px;
+  }
+
+  100% {
+    width: 60px;
+    height: 20px;
+  }
+}
+
+@keyframes btn-animation-bottom {
+  0% {
+    height: 0;
+    width: 0;
+  }
+
+  50% {
+    height: 20px;
+    width: 60px;
+  }
+
+  100% {
+    width: 60px;
+    height: 20px;
+  }
+}
